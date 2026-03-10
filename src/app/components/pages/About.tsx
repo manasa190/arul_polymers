@@ -44,9 +44,10 @@ export function About() {
             <AnimatedText
               text="Decades of Trust."
               textClassName="text-2xl md:text-7xl font-black tracking-tighter text-[#DF1E26] py-2"
-              underlineClassName="text-[#DF1E26] opacity-60 h-1 md:h-2"
+              underlineClassName="text-[#DF1E26] opacity-100 h-8 md:h-12 -bottom-10 md:-bottom-14"
               className="mt-1 md:mt-2"
               underlineDuration={2}
+              strokeWidth={6}
             />
           </div>
           <p className="text-base md:text-2xl text-slate-500 leading-relaxed font-light max-w-2xl mx-auto">

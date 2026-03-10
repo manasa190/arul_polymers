@@ -11,6 +11,7 @@ interface AnimatedTextProps extends React.HTMLAttributes<HTMLDivElement> {
     underlinePath?: string;
     underlineHoverPath?: string;
     underlineDuration?: number;
+    strokeWidth?: number;
 }
 
 const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
@@ -22,6 +23,7 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
             underlinePath = "M 0,10 Q 75,0 150,10 Q 225,20 300,10",
             underlineHoverPath = "M 0,10 Q 75,20 150,10 Q 225,0 300,10",
             underlineDuration = 1.5,
+            strokeWidth = 2,
             ...props
         },
         ref
@@ -66,7 +68,7 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
                         <motion.path
                             d={underlinePath}
                             stroke="currentColor"
-                            strokeWidth="2"
+                            strokeWidth={strokeWidth}
                             fill="none"
                             variants={pathVariants}
                             initial="hidden"

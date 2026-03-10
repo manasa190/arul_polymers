@@ -9,6 +9,12 @@ const InteractiveSelector = () => {
 
     const options = [
         {
+            title: "Aerospace",
+            description: "Advanced defense-grade formulations",
+            image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/IndiGo_Airbus_A320_20221121.jpg",
+            icon: <Plane size={22} className="text-white" />
+        },
+        {
             title: "Industry",
             description: "Heavy-duty industrial manufacturing",
             image: "/images/industry.png",
@@ -31,12 +37,6 @@ const InteractiveSelector = () => {
             description: "Resilient solutions for outdoor use",
             image: "/images/agriculture.png",
             icon: <Tractor size={22} className="text-white" />
-        },
-        {
-            title: "Aerospace",
-            description: "Advanced defense-grade formulations",
-            image: "/images/aerospace.png",
-            icon: <Plane size={22} className="text-white" />
         }
     ];
 
@@ -47,6 +47,12 @@ const InteractiveSelector = () => {
     };
 
     useEffect(() => {
+        // Pre-load all images to prevent flicker and long loading times
+        options.forEach((opt) => {
+            const img = new Image();
+            img.src = opt.image;
+        });
+
         const timers: number[] = [];
 
         options.forEach((_, i) => {

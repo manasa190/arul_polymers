@@ -121,9 +121,9 @@ export function Home() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#00609C]/10 rounded-full blur-[80px]" />
 
             {/* Staggered Image Grid */}
-            <div className="absolute top-0 right-4 w-[65%] h-[60%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-20 group">
-              <div className="absolute inset-0 bg-[#00609C]/20 transition-colors group-hover:bg-transparent z-10 mix-blend-multiply" />
-              <ImageWithFallback src="/images/aerospace.png" alt="Aerospace Application" className="w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-110" />
+            <div className="absolute top-0 right-4 w-[65%] h-[60%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-20 group bg-slate-100">
+              <div className="absolute inset-0 bg-[#00609C]/5 transition-colors group-hover:bg-transparent z-10 mix-blend-multiply" />
+              <ImageWithFallback src="https://upload.wikimedia.org/wikipedia/commons/e/ea/IndiGo_Airbus_A320_20221121.jpg" alt="Aerospace Application" className="w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-110" />
             </div>
 
             <div className="absolute bottom-10 left-0 w-[55%] h-[55%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-30 group">

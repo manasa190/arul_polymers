@@ -92,15 +92,15 @@ const InteractiveSelector = () => {
 
             <div className="h-12 z-10"></div>
 
-            {/* Options Container */}
-            <div className="options flex flex-col md:flex-row w-full max-w-[1200px] h-auto md:h-[500px] px-4 md:px-0 mx-auto items-stretch overflow-hidden relative z-10 gap-4 md:gap-2">
+            {/* Options Container - Forced horizontal for mobile as well */}
+            <div className="options flex flex-row w-full max-w-[1200px] h-[450px] md:h-[500px] px-2 md:px-0 mx-auto items-stretch overflow-hidden relative z-10 gap-1 md:gap-2">
                 {options.map((option, index) => (
                     <div
                         key={index}
                         className={`
               option relative flex flex-col justify-end overflow-hidden transition-all duration-700 ease-in-out
               ${activeIndex === index ? 'active' : ''}
-              rounded-2xl
+              rounded-xl md:rounded-2xl
             `}
                         style={{
                             backgroundImage: `url('${option.image}')`,
@@ -110,11 +110,9 @@ const InteractiveSelector = () => {
                             backfaceVisibility: 'hidden',
                             opacity: animatedOptions.includes(index) ? 1 : 0,
                             transform: animatedOptions.includes(index)
-                                ? 'translateY(0)'
-                                : (window.innerWidth < 768 ? 'translateY(20px)' : 'translateX(-60px)'),
-                            minHeight: activeIndex === index
-                                ? (window.innerWidth < 768 ? '450px' : '280px')
-                                : (window.innerWidth < 768 ? '120px' : '80px'),
+                                ? 'translateX(0)'
+                                : 'translateX(-60px)',
+                            minHeight: '100%',
                             borderWidth: '2px',
                             borderStyle: 'solid',
                             borderColor: activeIndex === index ? 'rgba(255,255,255,0.5)' : 'transparent',
@@ -122,9 +120,9 @@ const InteractiveSelector = () => {
                             boxShadow: activeIndex === index
                                 ? '0 20px 40px rgba(0,96,156,0.30)'
                                 : '0 10px 20px rgba(0,0,0,0.10)',
-                            flex: activeIndex === index ? '12 1 0%' : '1 1 0%',
+                            flex: activeIndex === index ? '10 1 0%' : '1.5 1 0%',
                             zIndex: activeIndex === index ? 10 : 1,
-                            willChange: 'flex-grow, box-shadow, min-height'
+                            willChange: 'flex-grow, box-shadow'
                         }}
                         onClick={() => handleOptionClick(index)}
                     >

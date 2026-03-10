@@ -124,7 +124,7 @@ export function About() {
 
           <motion.div {...fadeIn} className="relative mt-12 lg:mt-0">
             {/* Multi-layered Composition */}
-            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] aspect-[4/3] group">
+            <div className="relative z-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] aspect-[16/7] md:aspect-[16/9] group">
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent z-10" />
               <ImageWithFallback
                 src="/images/manufacturing_plant.png"
@@ -132,33 +132,33 @@ export function About() {
                 className="w-full h-full object-cover transition-transform duration-[20s] group-hover:scale-110"
               />
 
-              {/* Floating ID Card Badge */}
-              <div className="absolute top-8 right-8 z-20">
-                <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-4 rounded-2xl shadow-2xl flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#DF1E26] flex items-center justify-center animate-pulse">
-                    <div className="w-2 h-2 rounded-full bg-white" />
+              {/* Floating ID Card Badge - Scaled for Horizontal */}
+              <div className="absolute top-4 right-4 md:top-8 md:right-8 z-20">
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-2 md:p-4 rounded-xl md:rounded-2xl shadow-2xl flex items-center gap-2 md:gap-3">
+                  <div className="w-6 h-6 md:w-10 md:h-10 rounded-full bg-[#DF1E26] flex items-center justify-center animate-pulse">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white" />
                   </div>
                   <div className="text-white">
-                    <div className="text-[10px] font-black uppercase tracking-tighter opacity-70">Facility Status</div>
-                    <div className="text-xs font-bold">Technically Operational</div>
+                    <div className="text-[8px] md:text-[10px] font-black uppercase tracking-tighter opacity-70">Status</div>
+                    <div className="text-[10px] md:text-xs font-bold">Operational</div>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute bottom-10 left-10 right-10 z-20 space-y-4">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 backdrop-blur-md text-slate-900 text-sm font-bold shadow-xl">
-                  <MapPin className="w-4 h-4 text-[#DF1E26]" /> 24,000 sq.ft Manufacturing Unit
+              <div className="absolute bottom-4 left-4 right-4 md:bottom-10 md:left-10 md:right-10 z-20 space-y-2 md:space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-lg md:rounded-xl bg-white/90 backdrop-blur-md text-slate-900 text-[10px] md:text-sm font-bold shadow-xl">
+                  <MapPin className="w-3 h-3 md:w-4 md:h-4 text-[#DF1E26]" /> 24,000 sq.ft Unit
                 </div>
-                <div className="flex gap-4">
-                  <div className="p-4 rounded-2xl bg-[#00609C]/90 backdrop-blur-md text-white flex-1 border border-white/10">
-                    <Microscope className="w-6 h-6 mb-2" />
-                    <div className="text-xs font-black uppercase tracking-widest opacity-70">Lab Standard</div>
-                    <div className="font-bold">NABL Compliant R&D</div>
+                <div className="flex gap-2 md:gap-4">
+                  <div className="p-2 md:p-4 rounded-xl md:rounded-2xl bg-[#00609C]/90 backdrop-blur-md text-white flex-1 border border-white/10">
+                    <Microscope className="w-4 h-4 md:w-6 md:h-6 mb-1 md:mb-2" />
+                    <div className="text-[8px] md:text-xs font-black uppercase tracking-widest opacity-70">R&D Lab</div>
+                    <div className="text-[10px] md:font-bold">NABL Compliant</div>
                   </div>
-                  <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-md text-slate-900 flex-1 border border-black/5">
-                    <Factory className="w-6 h-6 mb-2 text-[#DF1E26]" />
-                    <div className="text-xs font-black uppercase tracking-widest opacity-50">Location</div>
-                    <div className="font-bold">Hosur HQ, India</div>
+                  <div className="p-2 md:p-4 rounded-xl md:rounded-2xl bg-white/90 backdrop-blur-md text-slate-900 flex-1 border border-black/5">
+                    <Factory className="w-4 h-4 md:w-6 md:h-6 mb-1 md:mb-2 text-[#DF1E26]" />
+                    <div className="text-[8px] md:text-xs font-black uppercase tracking-widest opacity-50">Hosur HQ</div>
+                    <div className="text-[10px] md:font-bold">India</div>
                   </div>
                 </div>
               </div>

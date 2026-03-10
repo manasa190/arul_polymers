@@ -92,15 +92,15 @@ const InteractiveSelector = () => {
 
             <div className="h-12 z-10"></div>
 
-            {/* Options Container - Optimized for mobile horizontal feel */}
-            <div className="options flex flex-row w-full max-w-[1200px] h-[550px] md:h-[500px] px-2 md:px-0 mx-auto items-stretch overflow-hidden relative z-10 gap-1 md:gap-2">
+            {/* Options Container - Responsive: Vertical for Mobile (Rectangle fit), Horizontal for Desktop */}
+            <div className="options flex flex-col md:flex-row w-full max-w-[1200px] h-auto md:h-[500px] px-2 md:px-0 mx-auto items-stretch overflow-hidden relative z-10 gap-2">
                 {options.map((option, index) => (
                     <div
                         key={index}
                         className={`
               option relative flex flex-col justify-end overflow-hidden transition-all duration-700 ease-in-out
               ${activeIndex === index ? 'active' : ''}
-              rounded-xl md:rounded-2xl
+              rounded-2xl
             `}
                         style={{
                             backgroundImage: `url('${option.image}')`,
@@ -110,9 +110,12 @@ const InteractiveSelector = () => {
                             backfaceVisibility: 'hidden',
                             opacity: animatedOptions.includes(index) ? 1 : 0,
                             transform: animatedOptions.includes(index)
-                                ? 'translateX(0)'
-                                : 'translateX(-60px)',
-                            minHeight: '100%',
+                                ? 'translate(0,0)'
+                                : (window.innerWidth < 768 ? 'translateY(20px)' : 'translateX(-60px)'),
+                            minHeight: window.innerWidth < 768
+                                ? (activeIndex === index ? '400px' : '80px')
+                                : '100%',
+                            width: '100%',
                             borderWidth: '2px',
                             borderStyle: 'solid',
                             borderColor: activeIndex === index ? 'rgba(255,255,255,0.5)' : 'transparent',
@@ -120,11 +123,11 @@ const InteractiveSelector = () => {
                             boxShadow: activeIndex === index
                                 ? '0 20px 40px rgba(0,96,156,0.30)'
                                 : '0 10px 20px rgba(0,0,0,0.10)',
-                            flex: activeIndex === index
-                                ? (window.innerWidth < 768 ? '25 1 0%' : '12 1 0%')
-                                : (window.innerWidth < 768 ? '1 1 0%' : '1.5 1 0%'),
+                            flex: window.innerWidth < 768
+                                ? 'none'
+                                : (activeIndex === index ? '12 1 0%' : '1.5 1 0%'),
                             zIndex: activeIndex === index ? 10 : 1,
-                            willChange: 'flex-grow, box-shadow'
+                            willChange: 'flex-grow, box-shadow, min-height'
                         }}
                         onClick={() => handleOptionClick(index)}
                     >
@@ -132,18 +135,18 @@ const InteractiveSelector = () => {
                         <div
                             className="absolute left-0 right-0 bottom-0 pointer-events-none transition-all duration-700 ease-in-out bg-gradient-to-t from-black/95 via-black/40 to-transparent"
                             style={{
-                                height: '180px',
+                                height: activeIndex === index ? '200px' : '80px',
                             }}
                         ></div>
 
-                        {/* Label with icon and info - Scaled for tight spaces */}
-                        <div className="absolute left-0 right-0 bottom-4 flex items-center justify-start h-12 z-20 pointer-events-none px-3 md:px-4 gap-2 md:gap-3 w-full">
-                            <div className={`min-w-[32px] md:min-w-[44px] h-[32px] md:h-[44px] flex items-center justify-center rounded-full backdrop-blur-[10px] shadow-lg flex-shrink-0 flex-grow-0 transition-all duration-500 ease-in-out ${activeIndex === index ? 'bg-[#DF1E26]' : 'bg-[#00609C]'}`}>
-                                {React.cloneElement(option.icon as React.ReactElement<any>, { size: window.innerWidth < 768 ? 16 : 22 })}
+                        {/* Label with icon and info */}
+                        <div className="absolute left-0 right-0 bottom-4 flex items-center justify-start h-12 z-20 pointer-events-none px-4 gap-3 w-full">
+                            <div className={`min-w-[40px] max-w-[40px] h-[40px] flex items-center justify-center rounded-full backdrop-blur-[10px] shadow-lg flex-shrink-0 flex-grow-0 transition-all duration-500 ease-in-out ${activeIndex === index ? 'bg-[#DF1E26]' : 'bg-[#00609C]'}`}>
+                                {React.cloneElement(option.icon as React.ReactElement<any>, { size: window.innerWidth < 768 ? 18 : 22 })}
                             </div>
-                            <div className="text-white whitespace-pre relative overflow-hidden flex flex-col justify-center max-w-[calc(100%-40px)]">
+                            <div className="text-white whitespace-pre relative overflow-hidden flex flex-col justify-center max-w-[calc(100%-55px)]">
                                 <div
-                                    className="font-black text-sm md:text-3xl transition-all duration-700 ease-in-out truncate uppercase tracking-tight"
+                                    className="font-black text-base md:text-3xl transition-all duration-700 ease-in-out truncate uppercase tracking-tight"
                                     style={{
                                         opacity: activeIndex === index ? 1 : 0,
                                         transform: activeIndex === index ? 'translateX(0)' : 'translateX(25px)'

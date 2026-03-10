@@ -124,7 +124,7 @@ export function About() {
 
           <motion.div {...fadeIn} className="relative mt-12 lg:mt-0">
             {/* Multi-layered Composition */}
-            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] aspect-[4/5] group">
+            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] aspect-[4/3] group">
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent z-10" />
               <ImageWithFallback
                 src="/images/manufacturing_plant.png"

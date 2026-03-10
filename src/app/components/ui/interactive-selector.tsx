@@ -11,7 +11,7 @@ const InteractiveSelector = () => {
         {
             title: "Aerospace",
             description: "Advanced defense-grade formulations",
-            image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/IndiGo_Airbus_A320_20221121.jpg",
+            image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&q=80&w=2000",
             icon: <Plane size={22} className="text-white" />
         },
         {
@@ -104,6 +104,7 @@ const InteractiveSelector = () => {
             `}
                         style={{
                             backgroundImage: `url('${option.image}')`,
+                            backgroundColor: '#e2e8f0',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             backfaceVisibility: 'hidden',
@@ -136,7 +137,7 @@ const InteractiveSelector = () => {
                         {/* Label with icon and info */}
                         <div className="absolute left-0 right-0 bottom-4 flex items-center justify-start h-12 z-20 pointer-events-none px-4 gap-3 w-full">
                             <div className={`min-w-[40px] max-w-[40px] h-[40px] md:min-w-[44px] md:max-w-[44px] md:h-[44px] flex items-center justify-center rounded-full backdrop-blur-[10px] shadow-lg flex-shrink-0 flex-grow-0 transition-all duration-500 ease-in-out ${activeIndex === index ? 'bg-[#DF1E26]' : 'bg-[#00609C]'}`}>
-                                {React.cloneElement(option.icon as React.ReactElement, { size: window.innerWidth < 768 ? 18 : 22 })}
+                                {React.cloneElement(option.icon as React.ReactElement<any>, { size: window.innerWidth < 768 ? 18 : 22 })}
                             </div>
                             <div className="text-white whitespace-pre relative overflow-hidden flex flex-col justify-center max-w-[calc(100%-55px)]">
                                 <div

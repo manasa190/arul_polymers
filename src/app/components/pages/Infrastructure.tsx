@@ -124,28 +124,34 @@ export function Infrastructure() {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                             {/* Science Card */}
-                            <div className="p-8 rounded-3xl bg-blue-50/50 border border-blue-100/50 backdrop-blur-sm group/card hover:bg-white hover:shadow-2xl hover:shadow-blue-200/20 transition-all duration-500">
-                                <div className="w-14 h-14 rounded-2xl bg-[#00609C] flex items-center justify-center text-white mb-6 shadow-lg shadow-blue-500/30 group-hover/card:scale-110 transition-transform">
-                                    <Microscope className="w-7 h-7" />
+                            <motion.div
+                                whileHover={{ y: -10 }}
+                                className="p-8 rounded-[2.5rem] bg-blue-50/40 border-2 border-blue-100/30 backdrop-blur-md group/card hover:bg-white hover:shadow-2xl hover:shadow-[#00609C]/10 transition-all duration-500"
+                            >
+                                <div className="w-16 h-16 rounded-2xl bg-[#00609C] flex items-center justify-center text-white mb-8 shadow-xl shadow-[#00609C]/30 rotate-3 group-hover/card:rotate-0 transition-transform">
+                                    <Microscope className="w-8 h-8" />
                                 </div>
-                                <h4 className="text-xl font-bold text-slate-900 mb-3">Science Point</h4>
-                                <p className="text-xs text-slate-500 font-light leading-relaxed">
+                                <h4 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">Science <br /><span className="text-[#00609C]">Point</span></h4>
+                                <p className="text-sm text-slate-500 font-medium leading-relaxed">
                                     Rigid empirical testing and precise molecular formulations ensuring zero-defect performance.
                                 </p>
-                            </div>
+                            </motion.div>
 
                             {/* Art Card */}
-                            <div className="p-8 rounded-3xl bg-red-50/50 border border-red-100/50 backdrop-blur-sm group/card hover:bg-white hover:shadow-2xl hover:shadow-red-200/20 transition-all duration-500 mt-0 sm:mt-12">
-                                <div className="w-14 h-14 rounded-2xl bg-[#DF1E26] flex items-center justify-center text-white mb-6 shadow-lg shadow-red-500/30 group-hover/card:scale-110 transition-transform">
-                                    <Layers className="w-7 h-7" />
+                            <motion.div
+                                whileHover={{ y: -10 }}
+                                className="p-8 rounded-[2.5rem] bg-red-50/40 border-2 border-red-100/30 backdrop-blur-md group/card hover:bg-white hover:shadow-2xl hover:shadow-[#DF1E26]/10 transition-all duration-500 mt-0 sm:mt-16"
+                            >
+                                <div className="w-16 h-16 rounded-2xl bg-[#DF1E26] flex items-center justify-center text-white mb-8 shadow-xl shadow-[#DF1E26]/30 -rotate-3 group-hover/card:rotate-0 transition-transform">
+                                    <Layers className="w-8 h-8" />
                                 </div>
-                                <h4 className="text-xl font-bold text-slate-900 mb-3">Artistic Precision</h4>
-                                <p className="text-xs text-slate-500 font-light leading-relaxed">
+                                <h4 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">Artistic <br /><span className="text-[#DF1E26]">Precision</span></h4>
+                                <p className="text-sm text-slate-500 font-medium leading-relaxed">
                                     Decades of master-craft intuition that transforms chemistry into high-tolerance mechanical reality.
                                 </p>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
 

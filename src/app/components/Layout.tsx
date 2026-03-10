@@ -154,11 +154,11 @@ export function Layout() {
             {/* Column 1: Identity & Navigation */}
             <div className="space-y-8">
               <Link to="/" className="flex items-center gap-2">
-                <div className="p-4 bg-white rounded-2xl shadow-lg border border-slate-100">
+                <div className="p-6 bg-white rounded-3xl shadow-2xl border border-slate-100/50">
                   <img
                     src="/images/logo.png"
                     alt="Arul Polymers Logo"
-                    className="h-16 w-auto object-contain"
+                    className="h-24 w-auto object-contain"
                   />
                 </div>
               </Link>
@@ -277,8 +277,8 @@ export function Layout() {
 
           </div>
 
-          <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600">
-            <div>&copy; {new Date().getFullYear()} Arul Polymers Pvt. Ltd. All rights reserved.</div>
+          <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-[0.3em] text-slate-600">
+            <div>&copy; {new Date().getFullYear()} All rights reserved.</div>
             <div className="flex gap-10">
               <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
               <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>

@@ -112,7 +112,9 @@ const InteractiveSelector = () => {
                             transform: animatedOptions.includes(index)
                                 ? 'translateY(0)'
                                 : (window.innerWidth < 768 ? 'translateY(20px)' : 'translateX(-60px)'),
-                            minHeight: activeIndex === index ? '280px' : '80px',
+                            minHeight: activeIndex === index
+                                ? (window.innerWidth < 768 ? '450px' : '280px')
+                                : (window.innerWidth < 768 ? '120px' : '80px'),
                             borderWidth: '2px',
                             borderStyle: 'solid',
                             borderColor: activeIndex === index ? 'rgba(255,255,255,0.5)' : 'transparent',
